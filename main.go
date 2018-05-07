@@ -2,20 +2,22 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"github.com/c1982/secureimage"
 )
 
 func main() {
-	trusted, err := secureimage.Check("./uploads/tmp_test.jpg")
+	trusted, err := secureimage.Check("testdata/1N3.jpeg")
 
 	if err != nil {
 		panic(err)
 	}
 
 	if trusted {
-		fmt.Println("file is trusted.")
+		fmt.Println("file is trusted.") // Filename ?
 	} else {
 		fmt.Println("bad file")
 	}
 }
+
+// output
+//file is trusted.
